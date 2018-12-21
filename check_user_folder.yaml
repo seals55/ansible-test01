@@ -1,0 +1,13 @@
+---
+
+- name: Check User Folder
+  hosts: unraid
+  gather_facts: no
+  
+  tasks: 
+    - name: Create Temp file unser User folder
+      copy: 
+        content: "hello world\n" 
+        dest: /mnt/user/temp/testfile.txt
+        user: "99"
+        group: "users"
